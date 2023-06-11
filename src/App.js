@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import SearchAppBar from './Components/Appbar';
+import Temperature from './Components/Temperature';
+import Container from '@mui/material/Container';
+import Forecast from './Components/forecast';
+import { Typography,Box } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SearchAppBar />
+      <Container>
+        <Temperature />
+        <Box sx={{marginTop:3}}>
+          <Typography>
+            Extended Forecast
+          </Typography>
+        </Box>
+        <Forecast/>
+      </Container>
+    </>
   );
 }
 
