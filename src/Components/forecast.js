@@ -8,7 +8,7 @@ export default function Forecast() {
     return (
         <Grid container spacing={1} sx={{marginTop:2}}>
             <Grid item xs={2}>
-            <Paper elevation={10}  >
+            <Paper elevation={10} sx={{marginBottom:6}} >
             <Box>
             <Typography sx={{padding:1,marginLeft:6}} variant='h6' responsive='h3'>
                Sat 

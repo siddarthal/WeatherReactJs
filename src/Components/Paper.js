@@ -10,11 +10,15 @@ export default function Paperit() {
                     Current Weather
                 </Typography>
             </Box>
-            
+            <Box sx={{ marginLeft: 4}}>
+                <Typography variant='h4' responsive='h5'>
+                    Paris
+                </Typography>
+            </Box>
             <Box>
                 <Temp />
             </Box>
-            <Box sx={{ paddingLeft: 12,paddingBottom:3 }}>
+            <Box sx={{ marginLeft: 12,paddingBottom:5 }}>
                 <Typography variant='h5' responsive='h5' >
                     Cloudy
                 </Typography>

@@ -21,7 +21,7 @@ export default function Temp(){
        
         </Grid>
         <Grid item xs={4}>
-        <Box sx={{fontSize:'7rem',paddingTop:3}}>
+        <Box sx={{fontSize:'7rem',marginTop:4}}>
            <WiCelsius/>
         </Box>
         </Grid>
