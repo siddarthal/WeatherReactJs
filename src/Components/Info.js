@@ -3,9 +3,9 @@ import { Typography, Paper, Box } from '@mui/material';
 import Switch from '@mui/material/Switch';
 import { WiDirectionDown, WiDirectionUp,WiWindBeaufort0,WiBarometer ,WiRaindrop} from "react-icons/wi";
 
-export default function Information() {
+export default function Information({cast}) {
     return (
-        <Paper elevation={24} sx={{ marginTop: 5 }} >
+        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#cfd8dc' }} >
             <Box sx={{ marginLeft: 50, paddingTop: 5 }}>
                 <Switch defaultChecked />
             </Box>

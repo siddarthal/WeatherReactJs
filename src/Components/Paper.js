@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import Temp from './Temp';
 export default function Paperit() {
     return (
-        <Paper elevation={24} sx={{ marginTop: 5 }} >
-            <Box sx={{ padding: 2 }}>
+        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#cfd8dc' } }  >
+            <Box sx={{ padding: 2 }} >
                 <Typography variant='h5' responsive='h3'>
                     Current Weather
                 </Typography>

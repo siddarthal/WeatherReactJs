@@ -1,0 +1,46 @@
+[
+
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"<WiDaySunny/>",
+        "condition":"Overcast",
+        "temperature":"High"
+    },
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"<WiDaySunny/>",
+        "condition":"Overcast",
+        "temperature":"High"
+    },
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"<WiDaySunny/>",
+        "condition":"Overcast",
+        "temperature":"High"
+    },
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"<WiDaySunny/>",
+        "condition":"Overcast",
+        "temperature":"High"
+    },
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"",
+        "condition":"Overcast",
+        "temperature":"High"
+    },
+    {
+        "id":1,
+        "day":"sunday",
+        "symbol":"",
+        "condition":"Overcast",
+        "temperature":"High"
+    }
+    
+]
