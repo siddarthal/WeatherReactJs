@@ -1,9 +1,15 @@
 import { Grid } from "@mui/material"
 import { Typography, Paper, Box } from '@mui/material';
 import Switch from '@mui/material/Switch';
-import { WiDirectionDown, WiDirectionUp,WiWindBeaufort0,WiBarometer ,WiRaindrop} from "react-icons/wi";
-
-export default function Information({cast}) {
+import { WiDirectionDown, WiDirectionUp,WiWindBeaufort0,WiBarometer ,WiRaindrop, WiHumidity} from "react-icons/wi";
+import  '../Design/raw/wi_windsock.svg';
+export default function Information({data}) {
+    let nu = parseInt(data.data.main.feels_like);
+    let numb=parseInt(data.data.main.temp_max);
+    let numbu=parseInt(data.data.main.temp_min);
+    let feels_like=nu-273;
+    let temp_max=numb-273;
+    let temp_min=numbu-273;
     return (
         <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#cfd8dc' }} >
             <Box sx={{ marginLeft: 50, paddingTop: 5 }}>
@@ -11,7 +17,7 @@ export default function Information({cast}) {
             </Box>
             <Box>
                 <Typography sx={{ padding: 2.1, marginLeft: 6 }} variant='h6' responsive='h3'>
-                    Feels Like 34℃
+                    Feels Like {feels_like }°C
                 </Typography>
             </Box>
             <Box >
@@ -19,13 +25,15 @@ export default function Information({cast}) {
                     <Grid item xs={2}>
                         <Box sx={{ marginLeft: 6, fontSize: '2.5rem' }}>
                             <WiDirectionUp />
+                            
+
                         </Box>
 
                     </Grid>
                     <Grid item xs={1}>
                         <Box sx={{ marginTop: 0.4 }}>
                             <Typography variant="h5" responsive='h3'>
-                                39℃
+                                {temp_max}°C
                             </Typography>
                         </Box>
 
@@ -39,7 +47,7 @@ export default function Information({cast}) {
                     <Grid item xs={1}>
                         <Box sx={{ marginBottom:1 }}>
                             <Typography variant="h5" responsive='h3'>
-                                39℃
+                            {temp_min}°C
                             </Typography>
                         </Box>
 
@@ -56,13 +64,14 @@ export default function Information({cast}) {
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft: 6, fontSize: '3.6rem' }}>
                         < WiWindBeaufort0 />
+                        {/* <img src="wi_windsock.svg"/> */}
                     </Box>
 
                 </Grid>
                 <Grid item xs={3}>
                 <Box sx={{ marginLeft:2.4,marginTop:1}}>
                     <Typography variant="h5" responsive='h3'>
-                                Windy
+                                Wind 
                             </Typography>
                     </Box>
 
@@ -70,7 +79,7 @@ export default function Information({cast}) {
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft:2.6,marginTop:1}}>
                     <Typography variant="h5" responsive='h3'>
-                                23kph
+                            {data.data.wind.speed}Kmph
                             </Typography>
                     </Box>
 
@@ -94,7 +103,7 @@ export default function Information({cast}) {
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft:3,marginTop:1}}>
                     <Typography variant="h5" responsive='h3'>
-                                33Bar
+                                {data.data.main.pressure} Pa
                             </Typography>
                     </Box>
 
@@ -118,7 +127,7 @@ export default function Information({cast}) {
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft:3,marginTop:1}}>
                     <Typography variant="h5" responsive='h3'>
-                                33%
+                                {data.data.main.humidity}%
                             </Typography>
                     </Box>
 

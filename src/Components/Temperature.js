@@ -4,15 +4,15 @@ import Paperit from './Paper';
 import Information from './Info';
 import { useEffect, useState } from 'react';
 
-    const Temperature=() =>{
+    const Temperature=({data}) =>{
         return (
             
             <Grid container spacing={2} >
                 <Grid item xs={6} >
-                   <Paperit/>
+                   <Paperit data={data}/>
                 </Grid>
                 <Grid item xs={6}>
-                   <Information/>
+                   <Information data={data}/>
                 </Grid>
             </Grid>
         )
