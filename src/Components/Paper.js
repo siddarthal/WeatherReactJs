@@ -2,9 +2,12 @@ import { Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Temp from './Temp';
+
+
 export default function Paperit({data}) {
+    // console.log(wea);
     return (
-        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#cfd8dc' } }  >
+        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#b3b3cc' } }  >
             <Box sx={{ padding: 2 }} >
                 <Typography variant='h5' responsive='h3'>
                     Current Weather

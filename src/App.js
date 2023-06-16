@@ -2,15 +2,14 @@ import './App.css';
 import Temperature from './Components/Temperature';
 import Container from '@mui/material/Container';
 import Forecast from './Components/forecast';
-import { Typography, Box, Grid, Paper, CircularProgress } from '@mui/material';
+import { Typography, Box, Grid, CircularProgress } from '@mui/material';
 import { useState, useEffect } from 'react';
-import fore from "./data.json";
 import Siddartha from './Components/Trial';
 
 const App = () => {
   const [data, setData] = useState('');
   const [isLoading, setIsLoading] = useState(true);
-  const [forecast,setForecast]=useState(true);
+  const [forecast, setForecast] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -21,12 +20,18 @@ const App = () => {
 
   return (
     <>
-      <Box sx={{ bgcolor: '#90a4ae' }}>
-        <Box>
-          <Paper elevation={10}>
-            <Siddartha data={data} setData={setData} forecasr={forecast} setForecast={setForecast} />
-          </Paper>
-        </Box>
+    <Box sx={{ bgcolor: '#1f1f1f' }}>
+
+    <Container >
+      <Box sx={{ paddingTop: 9 }} >
+       <Grid container spacing={1}>
+       <Siddartha setData={setData} setForecast={setForecast} />
+       </Grid>
+        
+      </Box>
+      </Container>
+     
+      <Box >
 
         <Box sx={{ marginTop: 3 }}>
           <Container>
@@ -43,8 +48,8 @@ const App = () => {
                   </Typography>
                 </Box>
                 <Grid container spacing={1} sx={{ marginTop: 2 }}>
-                  {forecast.data.list.map((cast,index) => (
-                   (index + 1) % 8 === 0 && <Forecast cast={cast} />
+                  {forecast.data.list.map((cast, index) => (
+                    (index + 1) % 8 === 0 && <Forecast cast={cast} />
                   ))}
                 </Grid>
               </>
@@ -52,6 +57,11 @@ const App = () => {
           </Container>
         </Box>
       </Box>
+
+
+
+    </Box>
+     
     </>
   );
 }

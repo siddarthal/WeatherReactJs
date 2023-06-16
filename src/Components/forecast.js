@@ -6,13 +6,13 @@ import { WiDaySunny } from "react-icons/wi";
 
 export default function Forecast(cast) {
     const dtTxt=cast.cast.dt_txt;
-    console.log(cast.cast);
+    // console.log(cast.cast);
     const datePart = dtTxt.split(" ")[0];
     const tempmax=parseInt(cast.cast.main.temp_max)-273;
     const tempmin=parseInt(cast.cast.main.temp_min)-273;
     return (
             <Grid item xs={2.4}>
-            <Paper elevation={10} sx={{marginBottom:6 ,bgcolor:"#cfd8dc" }}>
+            <Paper elevation={10} sx={{marginBottom:6 ,bgcolor:"#b3b3cc" }}>
             <Box>
             <Typography sx={{padding:2,marginLeft:3}} variant='h6' responsive='h3'>
             {datePart}

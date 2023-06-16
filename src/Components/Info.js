@@ -1,8 +1,11 @@
 import { Grid } from "@mui/material"
 import { Typography, Paper, Box } from '@mui/material';
 import Switch from '@mui/material/Switch';
+import Windsock from '../Design/animation-ready/windsock.svg';
+import High from '../Design/animation-ready/pressure-high.svg';
+import Low from '../Design/animation-ready/pressure-low.svg';
+
 import { WiDirectionDown, WiDirectionUp,WiWindBeaufort0,WiBarometer ,WiRaindrop, WiHumidity} from "react-icons/wi";
-import  '../Design/raw/wi_windsock.svg';
 export default function Information({data}) {
     let nu = parseInt(data.data.main.feels_like);
     let numb=parseInt(data.data.main.temp_max);
@@ -11,7 +14,7 @@ export default function Information({data}) {
     let temp_max=numb-273;
     let temp_min=numbu-273;
     return (
-        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#cfd8dc' }} >
+        <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#b3b3cc' }} >
             <Box sx={{ marginLeft: 50, paddingTop: 5 }}>
                 <Switch defaultChecked />
             </Box>
@@ -23,15 +26,13 @@ export default function Information({data}) {
             <Box >
                 <Grid container spacing={2}>
                     <Grid item xs={2}>
-                        <Box sx={{ marginLeft: 6, fontSize: '2.5rem' }}>
-                            <WiDirectionUp />
-                            
-
+                        <Box sx={{fontSize: '2.5rem' }}>
+                        <img src={High}/>
                         </Box>
 
                     </Grid>
-                    <Grid item xs={1}>
-                        <Box sx={{ marginTop: 0.4 }}>
+                    <Grid item xs={2}>
+                        <Box sx={{ paddingTop:'1.25rem' }}>
                             <Typography variant="h5" responsive='h3'>
                                 {temp_max}°C
                             </Typography>
@@ -39,13 +40,13 @@ export default function Information({data}) {
 
                     </Grid>
                     <Grid item xs={2}>
-                        <Box sx={{ marginLeft: 6, fontSize: '3.6rem' }}>
-                            <WiDirectionDown />
+                        <Box sx={{  fontSize: '1rem' }}>
+                        <img src={Low}/>
                         </Box>
 
                     </Grid>
-                    <Grid item xs={1}>
-                        <Box sx={{ marginBottom:1 }}>
+                    <Grid item xs={2}>
+                        <Box sx={{ paddingTop:'1.25rem' }}>
                             <Typography variant="h5" responsive='h3'>
                             {temp_min}°C
                             </Typography>
@@ -63,13 +64,12 @@ export default function Information({data}) {
             <Grid container spacing={3}>
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft: 6, fontSize: '3.6rem' }}>
-                        < WiWindBeaufort0 />
-                        {/* <img src="wi_windsock.svg"/> */}
+                        <img src={Windsock}/>
                     </Box>
 
                 </Grid>
                 <Grid item xs={3}>
-                <Box sx={{ marginLeft:2.4,marginTop:1}}>
+                <Box sx={{ marginLeft:3.1,marginTop:2}}>
                     <Typography variant="h5" responsive='h3'>
                                 Wind 
                             </Typography>
@@ -77,7 +77,7 @@ export default function Information({data}) {
 
                 </Grid >
                 <Grid item xs={3}>
-                    <Box sx={{ marginLeft:2.6,marginTop:1}}>
+                    <Box sx={{ marginLeft:2.9,marginTop:2}}>
                     <Typography variant="h5" responsive='h3'>
                             {data.data.wind.speed}Kmph
                             </Typography>
@@ -85,7 +85,7 @@ export default function Information({data}) {
 
                 </Grid>
             </Grid>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft: 6, fontSize: '3.6rem' }}>
                         < WiBarometer />
@@ -109,7 +109,7 @@ export default function Information({data}) {
 
                 </Grid>
             </Grid>
-            <Grid container spacing={2}>
+            <Grid container spacing={3}>
                 <Grid item xs={3}>
                     <Box sx={{ marginLeft: 6, fontSize: '3.6rem' }}>
                         < WiRaindrop />
