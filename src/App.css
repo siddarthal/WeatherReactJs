@@ -58,3 +58,6 @@ input[type=text] {
 input[type=text]:focus {
   width: 100%;
 }
+Box{
+  bgimage: url("https://m-cdn.phonearena.com/images/article/143515-wide-two_1200/Apple-tests-adding-news-to-the-native-Weather-app-in-iOS-16.2-Beta.jpg")
+}

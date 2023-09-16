@@ -15,11 +15,11 @@ export default function Information({data}) {
     let temp_min=numbu-273;
     return (
         <Paper elevation={24} sx={{ marginTop: 5,bgcolor:'#b3b3cc' }} >
-            <Box sx={{ marginLeft: 50, paddingTop: 5 }}>
+            {/* <Box sx={{ marginLeft: 50, paddingTop: 5 }}>
                 <Switch defaultChecked />
-            </Box>
+            </Box> */}
             <Box>
-                <Typography sx={{ padding: 2.1, marginLeft: 6 }} variant='h6' responsive='h3'>
+                <Typography sx={{ padding: 2.1, marginLeft: 6,display:'block', paddingTop:9.3 }} variant='h6' responsive='h3'>
                     Feels Like {feels_like }°C
                 </Typography>
             </Box>

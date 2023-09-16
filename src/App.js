@@ -5,6 +5,7 @@ import Forecast from './Components/forecast';
 import { Typography, Box, Grid, CircularProgress } from '@mui/material';
 import { useState, useEffect } from 'react';
 import Siddartha from './Components/Trial';
+// import Logo from './download.jpeg';
 
 const App = () => {
   const [data, setData] = useState('');
@@ -20,7 +21,7 @@ const App = () => {
 
   return (
     <>
-    <Box sx={{ bgcolor: '#1f1f1f' }}>
+    <Box sx={{ bgcolor: '#white',}}>
 
     <Container >
       <Box sx={{ paddingTop: 9 }} >
