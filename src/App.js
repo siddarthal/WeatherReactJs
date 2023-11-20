@@ -21,48 +21,48 @@ const App = () => {
 
   return (
     <>
-    <Box sx={{ bgcolor: '#white',}}>
+      <Box sx={{ bgcolor: '#white', }}>
 
-    <Container >
-      <Box sx={{ paddingTop: 9 }} >
-       <Grid container spacing={1}>
-       <Siddartha setData={setData} setForecast={setForecast} />
-       </Grid>
-        
-      </Box>
-      </Container>
-     
-      <Box >
+        <Container >
+          <Box sx={{ paddingTop: 9 }} >
+            <Grid container spacing={1}>
+              <Siddartha setData={setData} setForecast={setForecast} />
+            </Grid>
 
-        <Box sx={{ marginTop: 3 }}>
-          <Container>
-            {isLoading ? (
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
-                <CircularProgress />
-              </Box>
-            ) : (
-              <>
-                <Temperature data={data} />
-                <Box sx={{ marginTop: 3 }}>
-                  <Typography>
-                    Extended Forecast
-                  </Typography>
+          </Box>
+        </Container>
+
+        <Box >
+
+          <Box sx={{ marginTop: 3 }}>
+            <Container>
+              {isLoading ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+                  <CircularProgress />
                 </Box>
-                <Grid container spacing={1} sx={{ marginTop: 2 }}>
-                  {forecast.data.list.map((cast, index) => (
-                    (index + 1) % 8 === 0 && <Forecast cast={cast} />
-                  ))}
-                </Grid>
-              </>
-            )}
-          </Container>
+              ) : (
+                <>
+                  <Temperature data={data} />
+                  <Box sx={{ marginTop: 3 }}>
+                    <Typography>
+                      Extended Forecast
+                    </Typography>
+                  </Box>
+                  <Grid container spacing={1} sx={{ marginTop: 2 }}>
+                    {forecast.data.list.map((cast, index) => (
+                      (index + 1) % 8 === 0 && <Forecast key={index} cast={cast} />
+                    ))}
+                  </Grid>
+                </>
+              )}
+            </Container>
+          </Box>
         </Box>
+
+
+
       </Box>
 
-
-
-    </Box>
-     
     </>
   );
 }
